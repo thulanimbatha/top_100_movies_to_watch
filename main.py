@@ -8,4 +8,6 @@ response = requests.get(url=URL)
 web_contents = response.text
 
 soup = BeautifulSoup(web_contents, "html.parser")
-print(soup.prettify())
+
+movie_titles = soup.find_all(name="h3", class_="title")
+print(movie_titles)

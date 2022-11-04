@@ -10,4 +10,10 @@ web_contents = response.text
 soup = BeautifulSoup(web_contents, "html.parser")
 
 movie_titles = soup.find_all(name="h3", class_="title")
-print(movie_titles)
+movie_list = []
+
+for movie_title in movie_titles:
+    movie = movie_title.get_text()
+    movie_list.append(movie)
+
+print(movie_list)

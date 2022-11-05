@@ -16,4 +16,6 @@ for movie_title in movie_titles:
     movie = movie_title.get_text()
     movie_list.append(movie)
 
-print(movie_list)
+with open("./movies.txt", "w", encoding="utf8") as movie_file:
+    for movie in movie_list:
+        movie_file.write(f"{movie}\n")
